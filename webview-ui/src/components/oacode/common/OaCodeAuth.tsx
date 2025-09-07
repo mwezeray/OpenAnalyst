@@ -20,10 +20,9 @@ const OaCodeAuth: React.FC<OaCodeAuthProps> = ({ onManualConfigClick, className 
 		<div className={`flex flex-col items-center ${className}`}>
 			<Logo />
 
-			<h2 className="m-0 p-0 mb-4">{t("oacode:welcome.greeting")}</h2>
+			<h2 className="m-0 p-0 mb-4 text-center">{t("oacode:welcome.greeting")}</h2>
 			<p className="text-center mb-2">{t("oacode:welcome.introText1")}</p>
-			<p className="text-center mb-2">{t("oacode:welcome.introText2")}</p>
-			<p className="text-center mb-5">{t("oacode:welcome.introText3")}</p>
+			<p className="text-center mb-5">{t("oacode:welcome.introText2")}</p>
 
 			<div className="w-full flex flex-col gap-5">
 				<ButtonLink
