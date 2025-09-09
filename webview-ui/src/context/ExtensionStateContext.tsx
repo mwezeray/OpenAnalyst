@@ -349,6 +349,12 @@ export const ExtensionStateContextProvider: React.FC<{ children: React.ReactNode
 					if (newState.marketplaceInstalledMetadata !== undefined) {
 						setMarketplaceInstalledMetadata(newState.marketplaceInstalledMetadata)
 					}
+					// Update dynamic modes if present in state message
+					if ((newState as any).dynamicModes !== undefined) {
+						const { setDynamicModes } = require("@roo/modes")
+						setDynamicModes((newState as any).dynamicModes)
+						console.log("[ExtensionStateContext] Updated dynamic modes from extension", (newState as any).dynamicModes)
+					}
 					break
 				}
 				case "theme": {

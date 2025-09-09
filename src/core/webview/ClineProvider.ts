@@ -191,6 +191,38 @@ export class ClineProvider
 	}
 
 	/**
+	 * Get all available modes (built-in + template modes)
+	 */
+	private async getAllAvailableModes() {
+		try {
+			// Get template modes from the template manager
+			const templateModes = await this.templateManager.getActiveTemplateModes()
+			
+			// Import built-in modes
+			const { DEFAULT_MODES } = await import("@roo-code/types")
+			
+			// Check for conflicts and combine modes
+			const slugs = new Set(DEFAULT_MODES.map(mode => mode.slug))
+			const uniqueTemplateModes = templateModes.filter(mode => {
+				if (slugs.has(mode.slug)) {
+					console.warn(`[ClineProvider] Template mode "${mode.slug}" conflicts with built-in mode, skipping`)
+					return false
+				}
+				return true
+			})
+			
+			const allModes = [...DEFAULT_MODES, ...uniqueTemplateModes]
+			console.log(`[ClineProvider] Providing ${allModes.length} modes (${DEFAULT_MODES.length} built-in + ${uniqueTemplateModes.length} template)`)
+			return allModes
+		} catch (error) {
+			console.error("[ClineProvider] Failed to get available modes:", error)
+			// Fallback to built-in modes only
+			const { DEFAULT_MODES } = await import("@roo-code/types")
+			return DEFAULT_MODES
+		}
+	}
+
+	/**
 	 * Initialize cloud profile synchronization
 	 */
 	private async initializeCloudProfileSync() {
@@ -2047,6 +2079,10 @@ export class ClineProvider
 			includeDiagnosticMessages: includeDiagnosticMessages ?? true,
 			maxDiagnosticMessages: maxDiagnosticMessages ?? 50,
 			includeTaskHistoryInEnhance: includeTaskHistoryInEnhance ?? false,
+			// Template system information
+			availableTemplates: await this.templateManager.getAvailableTemplates(),
+			activeTemplateName: this.templateManager.getActiveTemplateName(),
+			dynamicModes: await this.getAllAvailableModes(),
 		}
 	}
 

@@ -783,8 +783,8 @@
 		"useCustomModel": "Use custom: {{modelId}}"
 	},
 	"footer": {
-		"feedback": "If you have any questions or feedback, feel free to open an issue at <githubLink>github.com/Oa-Org/oacode</githubLink> or join <redditLink>reddit.com/r/oacode</redditLink> or <discordLink>oacode.ai/discord</discordLink>.",
-		"support": "For financial questions, please contact Customer Support at <supportLink>https://oacode.ai/support</supportLink>",
+		"feedback": "If you have any questions or feedback, feel free to open an issue at <githubLink>github.com/OpenAnalystInc/OpenAnalyst</githubLink> or join <redditLink>reddit.com/r/OpenAnalyst</redditLink> or <discordLink>OpenAnalyst/discord</discordLink>.",
+		"support": "For financial questions, please contact Customer Support at <supportLink>https://openanalyst.com</supportLink>",
 		"telemetry": {
 			"label": "Allow error and usage reporting",
 			"description": "Help improve OpenAnalyst by sending usage data and error reports. No code, prompts, or personal information is ever sent. See our privacy policy for more details."

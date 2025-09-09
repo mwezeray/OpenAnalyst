@@ -13,19 +13,19 @@ export const SettingsFooter = ({ version, className, ...props }: SettingsFooterP
 	<div className={cn("text-vscode-descriptionForeground p-5", className)} {...props}>
 		<p style={{ wordWrap: "break-word", margin: 0, padding: 0 }}>
 			If you have any questions or feedback, feel free to open an issue at{" "}
-			<VSCodeLink href="https://github.com/Oa-Org/oacode" style={{ display: "inline" }}>
-				github.com/Oa-Org/oacode
+			<VSCodeLink href="https://github.com/OpenAnalystInc/OpenAnalyst" style={{ display: "inline" }}>
+				github.com/OpenAnalystInc/OpenAnalyst
 			</VSCodeLink>{" "}
 			or join{" "}
-			<VSCodeLink href="https://www.reddit.com/r/OaCode/" style={{ display: "inline" }}>
-				reddit.com/r/OaCode
+			<VSCodeLink href="https://www.reddit.com/r/OpenAnalyst" style={{ display: "inline" }}>
+				reddit.com/r/OpenAnalyst
 			</VSCodeLink>
 			.
 		</p>
 		<p style={{ wordWrap: "break-word", margin: 0, padding: 0 }}>
 			Regarding financial questions, please contact Customer Service at{" "}
-			<VSCodeLink href="mail:hi@oacode.ai" style={{ display: "inline" }}>
-				hi@oacode.ai
+			<VSCodeLink href="mail:openanalystinc@gmail.com" style={{ display: "inline" }}>
+				openanalystinc@gmail.com
 			</VSCodeLink>{" "}
 		</p>
 		<p className="italic">OpenAnalyst v{version}</p>
