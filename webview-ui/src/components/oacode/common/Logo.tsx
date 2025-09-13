@@ -33,7 +33,8 @@ export default function Logo({
   const BAR_OUTER = 26;   // horizontal bar length (outer)
   const BAR_INNER = 18;   // horizontal bar length (inner)
 
-  const WORD_GAP = 3;     // space between words and outer bracket
+  const TEXT_GAP_LEFT = 12;   // gap from inner bracket to OPEN
+  const TEXT_GAP_RIGHT = 16;  // slightly more gap from inner bracket to NALYST
   const TRACK = "0.08em"; // letter spacing for OPEN / NALYST
 
   // x-positions
@@ -58,9 +59,9 @@ export default function Logo({
         `}</style>
       </defs>
 
-      {/* OPEN (tight to outer left bracket) */}
+      {/* OPEN (positioned from inner bracket) */}
       <text
-        x={L_OUTER - WORD_GAP}
+        x={L_INNER - TEXT_GAP_LEFT}
         y={MID_Y}
         className="ls"
         fontSize="40"
@@ -111,9 +112,9 @@ export default function Logo({
         A
       </text>
 
-      {/* NALYST (tight to outer right bracket) */}
+      {/* NALYST (positioned from inner bracket) */}
       <text
-        x={R_OUTER + TH_OUTER + WORD_GAP}
+        x={R_INNER + TEXT_GAP_RIGHT}
         y={MID_Y}
         className="ls"
         fontSize="40"
