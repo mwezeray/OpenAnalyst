@@ -7,9 +7,35 @@ Welcome to the OpenAnalyst development guide! This document will help you set up
 Before you begin, make sure you have the following installed:
 
 1. **Git** - For version control
-2. **Node.js** (version [v20.19.2] recommended)
-3. **pnpm** - Package manager (https://pnpm.io/)
-4. **Visual Studio Code** - Our recommended IDE for development
+  
+3. **Node.js** (version [v20.19.2] recommended)
+   
+   For Windows: Using the Official Installer
+   Go to the Node.js Downloads page https://nodejs.org/en/download
+   Download the Windows Installer for version 20.19.2 (LTS recommended)
+   Run the installer and follow the setup instructions
+   After installation, open Command Prompt and verify:
+   ```bash
+    node -v
+    npm -v
+    ```
+   
+   For Mac:Using the Official Installer
+   Go to the Node.js Downloads page - https://nodejs.org/en/download
+   Download the macOS Installer for version 20.19.2 (LTS recommended)
+   Open the downloaded file and follow the installation instructions
+   After installation, verify:
+    ```bash
+    node -v
+    npm -v
+    ```
+   
+5. **pnpm** - Package manager (https://pnpm.io/)
+   ```bash
+    npm install -g pnpm
+    ```
+6. **Visual Studio Code** - Our recommended IDE for development
+   https://code.visualstudio.com/
 
 ## Getting Started
 
